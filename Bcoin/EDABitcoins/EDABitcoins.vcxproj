@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{4BC96A37-8CB0-4330-9B1E-70CD811C6286}</ProjectGuid>
+    <RootNamespace>EDABitcoins</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Lucas\OneDrive\Escritorio\Bcoin-20181107T030546Z-001\Bcoin\EDABitcoins\CryptoppFiles;$(IncludePath)</IncludePath>
+    <Allegro_AddonImage>true</Allegro_AddonImage>
+    <Allegro_AddonPrimitives>true</Allegro_AddonPrimitives>
+    <Allegro_AddonTTF>true</Allegro_AddonTTF>
+    <Allegro_AddonFont>true</Allegro_AddonFont>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="blockchain\Block.cpp" />
+    <ClCompile Include="blockchain\cryptoeda.cpp" />
+    <ClCompile Include="blockchain\Input.cpp" />
+    <ClCompile Include="blockchain\Output.cpp" />
+    <ClCompile Include="blockchain\Transaction.cpp" />
+    <ClCompile Include="blockchain\UTXO.cpp" />
+    <ClCompile Include="blockchain_actors\ActorFactory.cpp" />
+    <ClCompile Include="blockchain_actors\FullService.cpp" />
+    <ClCompile Include="blockchain_actors\MFsm.cpp" />
+    <ClCompile Include="blockchain_actors\Miner.cpp" />
+    <ClCompile Include="blockchain_actors\MinerEvent.cpp" />
+    <ClCompile Include="blockchain_actors\MinerFsm.cpp" />
+    <ClCompile Include="blockchain_actors\MinerIdleFsm.cpp" />
+    <ClCompile Include="blockchain_actors\MinerMiningFsm.cpp" />
+    <ClCompile Include="blockchain_actors\MinerSyncFsm.cpp" />
+    <ClCompile Include="blockchain_algorithm\Verifier.cpp" />
+    <ClCompile Include="blockchain_network\BlockchainContext.cpp" />
+    <ClCompile Include="blockchain_network\BlockchainMessage.cpp" />
+    <ClCompile Include="blockchain_network\BlockchainNode.cpp" />
+    <ClCompile Include="blockchain_network\BlockchainService.cpp" />
+    <ClCompile Include="blockchain_network\BlockchainStorage.cpp" />
+    <ClCompile Include="circPosFactory.cpp" />
+    <ClCompile Include="FullServiceController.cpp" />
+    <ClCompile Include="FullServiceView.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="myGUIEventsData.cpp" />
+    <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="PositionVector.cpp" />
+    <ClCompile Include="PTPNetwork.cpp" />
+    <ClCompile Include="PTPNetworkView.cpp" />
+    <ClCompile Include="Sec_Window_Controller.cpp" />
+    <ClCompile Include="Sec_Window_View.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Subject.cpp" />
+    <ClCompile Include="window\ALL_BUTTON.cpp" />
+    <ClCompile Include="window\ALL_BUTTON_CONTROLLER.cpp" />
+    <ClCompile Include="window\Al_Component.cpp" />
+    <ClCompile Include="window\Al_Label.cpp" />
+    <ClCompile Include="window\EditText.cpp" />
+    <ClCompile Include="window\EditText_Controller.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="blockchain\Block.h" />
+    <ClInclude Include="blockchain\cryptoeda.h" />
+    <ClInclude Include="blockchain\Input.h" />
+    <ClInclude Include="blockchain\Output.h" />
+    <ClInclude Include="blockchain\Transaction.h" />
+    <ClInclude Include="blockchain\UTXO.h" />
+    <ClInclude Include="blockchain_actors\ActorFactory.h" />
+    <ClInclude Include="blockchain_actors\FullService.h" />
+    <ClInclude Include="blockchain_actors\MFsm.h" />
+    <ClInclude Include="blockchain_actors\Miner.h" />
+    <ClInclude Include="blockchain_actors\MinerEvent.h" />
+    <ClInclude Include="blockchain_actors\MinerFsm.h" />
+    <ClInclude Include="blockchain_actors\MinerIdleFsm.h" />
+    <ClInclude Include="blockchain_actors\MinerMiningFsm.h" />
+    <ClInclude Include="blockchain_actors\MinerSyncFsm.h" />
+    <ClInclude Include="blockchain_algorithm\Verifier.h" />
+    <ClInclude Include="blockchain_network\BlockchainContext.h" />
+    <ClInclude Include="blockchain_network\BlockchainMessage.h" />
+    <ClInclude Include="blockchain_network\BlockchainNode.h" />
+    <ClInclude Include="blockchain_network\BlockchainService.h" />
+    <ClInclude Include="blockchain_network\BlockchainStorage.h" />
+    <ClInclude Include="circPosFactory.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="FullServiceController.h" />
+    <ClInclude Include="FullServiceView.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="GUI.h" />
+    <ClInclude Include="myGUIEventsData.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="PositionVector.h" />
+    <ClInclude Include="PTPNetwork.h" />
+    <ClInclude Include="PTPNetworkView.h" />
+    <ClInclude Include="Sec_Window_Controller.h" />
+    <ClInclude Include="Sec_Window_View.h" />
+    <ClInclude Include="Subject.h" />
+    <ClInclude Include="window\ALL_BUTTON.h" />
+    <ClInclude Include="window\ALL_BUTTON_CONTROLLER.h" />
+    <ClInclude Include="window\Al_Component.h" />
+    <ClInclude Include="window\Al_Label.h" />
+    <ClInclude Include="window\EditText.h" />
+    <ClInclude Include="window\EditText_Controller.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="arial.ttf" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\AllegroDeps.1.7.0.0\build\native\AllegroDeps.targets" Condition="Exists('..\packages\AllegroDeps.1.7.0.0\build\native\AllegroDeps.targets')" />
+    <Import Project="..\packages\Allegro.5.2.4.0\build\native\Allegro.targets" Condition="Exists('..\packages\Allegro.5.2.4.0\build\native\Allegro.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\AllegroDeps.1.7.0.0\build\native\AllegroDeps.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AllegroDeps.1.7.0.0\build\native\AllegroDeps.targets'))" />
+    <Error Condition="!Exists('..\packages\Allegro.5.2.4.0\build\native\Allegro.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Allegro.5.2.4.0\build\native\Allegro.targets'))" />
+  </Target>
+</Project>
