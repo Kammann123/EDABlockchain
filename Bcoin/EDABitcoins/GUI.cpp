@@ -2,7 +2,7 @@
 #include "GUI.h"
 #include <sstream>
 #include "iostream"
-
+#include "Sec_Window_Controller.h"
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
@@ -50,6 +50,7 @@ GUI::~GUI(void) {
 bool
 GUI::hasEvent()
 {
+	string b, c, aPad, aCompare;
 	if (al_get_next_event(queue, &rawEvent))
 	{
 		switch (rawEvent.type)
@@ -65,10 +66,9 @@ GUI::hasEvent()
 			GUIEvent = NO_EVENT;
 			const char *a = al_keycode_to_name(rawEvent.keyboard.keycode);
 			int num = atoi(a);
-			string aCompare(a);
-			string b = "BACKSPACE";
-			string c = "KEY73";
-			string aPad;
+			aCompare=a;
+			b = "BACKSPACE";
+			c = "KEY73";
 			if (aCompare == b)
 			{
 				GUIEvent = ALLEGRO_KEY_PRESSED;
@@ -86,31 +86,38 @@ GUI::hasEvent()
 				GUIEvent = ALLEGRO_KEY_PRESSED;
 				GUIEventData.set_keyPressed(num);
 				return true;
-			}	
+			}
 			else if (aCompare == c)
 			{
 				GUIEvent = ALLEGRO_KEY_PRESSED;
 				GUIEventData.set_keyPressed(-2);
 				return true;
 			}
-			else {
+			else
+			{
 				aPad = aCompare.substr(0, aCompare.size() - 1);
-				if (aPad == "PAD ") 
+				if (aPad == "PAD ")
 				{
-					string number = aCompare.substr(aCompare.size() - 1,2);
-					num=  atoi(number.c_str());
-					if ((num > 0)||(number == "0"))
+					string number = aCompare.substr(aCompare.size() - 1, 2);
+					num = atoi(number.c_str());
+					if ((num > 0) || (number == "0"))
 					{
 						GUIEvent = ALLEGRO_KEY_PRESSED;
 						GUIEventData.set_keyPressed(num);
 						return true;
 					}
-					
+
 				}
 			}
 			break;
+		case ALLEGRO_EVENT_DISPLAY_CLOSE:
+			GUIEvent = ALLEGRO_DISPLAY_CLOSED;
+			GUIEventData.set_display(rawEvent.display.source);
+			return true;
+			break;
 		}
 		return false;
+
 	}
 }
 
@@ -128,7 +135,9 @@ GUI::parseEvent()
 		case ALLEGRO_KEY_PRESSED:
 			(*it)->parseKeyboardEvent(&GUIEventData);
 			break;
-
+		case ALLEGRO_DISPLAY_CLOSED:
+			(*it)->parseCloseEvent(&GUIEventData);
+			break;
 		default:
 			//Unkonwn Event. Dependiendo del programa esto puede ser un error.
 			//Lo que pongan acá va a depender del error handling que hagan.
@@ -146,4 +155,11 @@ void GUI::addNewGUIController(Controller * newController)
 void GUI::removeGUIController(Controller * controllerToRemove)
 {
 	allControllers.remove(controllerToRemove);
+}
+
+bool GUI::exit(ALLEGRO_DISPLAY * mainDisplay)
+{
+	if ((GUIEvent == ALLEGRO_DISPLAY_CLOSED) && (GUIEventData.get_display() == mainDisplay))
+		return true;
+	return false;
 }

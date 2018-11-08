@@ -18,6 +18,7 @@ public:
 	*/
 	void parseMouseEvent(myGUIEventsData* ev_); // chequeo si el evento está dentro del círculo
 	void parseKeyboardEvent(myGUIEventsData* ev_);
+	void parseCloseEvent(myGUIEventsData *  newEvent);
 
 	/*
 	* getNode

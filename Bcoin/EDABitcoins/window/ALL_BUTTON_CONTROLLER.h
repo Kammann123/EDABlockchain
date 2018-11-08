@@ -8,6 +8,7 @@ public:
 	// Instancias concretas de las funciones abstractas declaradas arriba
 	void parseMouseEvent(myGUIEventsData * newEvent);
 	void parseKeyboardEvent(myGUIEventsData *  newEvent);
+	void parseCloseEvent(myGUIEventsData*  newEvent);
 	~ALL_BUTTON_CONTROLLER();
 
 private:

@@ -10,4 +10,5 @@ public:
 	~Controller() {};
 	virtual void parseMouseEvent(myGUIEventsData* ev_) = 0;
 	virtual void parseKeyboardEvent(myGUIEventsData*  ev_) = 0;
+	virtual void parseCloseEvent(myGUIEventsData*  ev_) = 0;
 };

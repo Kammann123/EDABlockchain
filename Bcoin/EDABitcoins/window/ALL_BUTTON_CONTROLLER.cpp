@@ -1,8 +1,8 @@
 #include "../stdafx.h"
 #include "ALL_BUTTON_CONTROLLER.h"
 
-
-
+void ALL_BUTTON_CONTROLLER::
+parseCloseEvent(myGUIEventsData*  newEvent) {}
 
 ALL_BUTTON_CONTROLLER::ALL_BUTTON_CONTROLLER(ALL_BUTTON * buttonToControl)
 {

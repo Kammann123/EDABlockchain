@@ -8,6 +8,9 @@ EditText_Controller::EditText_Controller(EditText * editTextToControl)
 	this->editTextToControl = editTextToControl;
 }
 
+void EditText_Controller::
+parseCloseEvent(myGUIEventsData*  newEvent) {}
+
 void EditText_Controller::parseMouseEvent(myGUIEventsData * newEvent)
 {
 	if (editTextToControl->isPointInsideRect(newEvent->get_mousePos()))

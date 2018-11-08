@@ -34,14 +34,15 @@ int main(int argc, char** argv) {
 
 	/* Inicializo la red */
 	network.genesis(1, 50);
-
+	bool exit = false;
 	/* Loop infinito (? */
-	while (true) {
+	while (!exit) {
 
 		/* Parseo eventos */
-		if (gui.hasEvent()) {
-
-			gui.parseEvent();
+		if (gui.hasEvent()) {	//Hay evento?
+			exit = gui.exit(graphics.getDisplay());
+			if(!exit)			//Es evento de salida>
+				gui.parseEvent();	//Se parsea
 		}
 
 		/* Le doy al tipo el run */

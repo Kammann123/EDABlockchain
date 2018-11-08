@@ -9,6 +9,10 @@ parseKeyboardEvent(myGUIEventsData* ev_) {
 
 }
 
+void FullServiceController::parseCloseEvent(myGUIEventsData * newEvent)
+{
+}
+
 void FullServiceController::
 parseMouseEvent(myGUIEventsData* ev_)
 {
